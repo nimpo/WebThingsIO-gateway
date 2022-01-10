@@ -13,7 +13,7 @@ SSL_DIR="${WEBTHINGS_HOME}/ssl"
 REPO_DIR="${WEBTHINGS_HOME}/repos"
 
 #Check DOMAIN is plausible and safe for curl
-if ! echo "$DOMAIN" |grep -q '^[A-Za-z0-9][A-Za-z0-9_-]*\.[A-Za-z0-9_-]*$'
+if ! echo "$DOMAIN" |grep -q '^[A-Za-z0-9][A-Za-z0-9_-]*\.[A-Za-z0-9_.-]*$'
 then
   echo "Usage $0 gateway.example.com"
   exit
