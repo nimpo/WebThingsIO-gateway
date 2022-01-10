@@ -8,7 +8,7 @@ cd /tmp/gatewayssl || exit 1
 #Input $1 should be public routable DNS name for this WebThing gateway
 DOMAIN=$1
 WEBTHINGS_HOME="${WEBTHINGS_HOME:=${HOME}/.webthings}"
-WEBTHINGS_DIST="${WEBTHINGS_DIST:=${HOME}/gateway}"
+WEBTHINGS_DIST="${WEBTHINGS_DIST:=${HOME}/webthings/gateway}"
 SSL_DIR="${WEBTHINGS_HOME}/ssl"
 REPO_DIR="${WEBTHINGS_HOME}/repos"
 
