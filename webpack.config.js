@@ -49,6 +49,11 @@ const pluginsWeb = [
         from: 'src/views/hotspot.handlebars',
         to: path.join(__dirname, 'build', 'views'),
       },
+      {
+        from: 'static/.well-known/acme-challenge/*',
+        to: path.join(__dirname, 'build'),
+      },
+
     ],
   }),
   new ImageMinimizerWebpackPlugin({

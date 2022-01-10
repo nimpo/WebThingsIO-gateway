@@ -229,6 +229,16 @@ function createApp(isSecure: boolean): express.Application {
       return;
     }
 
+    // If the request is for a file in the LetsEncrypt directory
+    if (request.path.match(/^\/\.well-known\/acme-challenge\/(?:[\w-]+|README.html)$/)) {
+      console.log('Requested path matches LetsEncrypt path');
+      if (fs.existsSync(__dirname + '/static' + request.path)) {
+        console.log('Requested path matches LetsEncrypt file');
+        next();
+	return;
+      }
+    }
+
     // If the Host header was not set, disallow this request.
     if (!request.hostname) {
       response.sendStatus(403);
